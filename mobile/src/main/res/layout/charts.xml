@@ -83,7 +83,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <include layout="@layout/card_toolbar" android:id="@+id/chart_toolbar"/>
+                    <include layout="@layout/card_toolbar"
+                        android:visibility="gone"
+                        android:id="@+id/chart_toolbar"/>
 
                     <TextView
                         android:id="@+id/chart2_legend"
@@ -92,6 +94,7 @@
                         android:text="@string/chart_label"
                         android:textSize="12sp"
                         android:textColor="#9fb7cc"
+                        android:visibility="gone"
                         android:gravity="bottom"
                         android:layout_below="@+id/chart_toolbar"
                         android:layout_marginLeft="40dp"
@@ -100,6 +103,7 @@
 
                     <TextView
                         android:id="@+id/chart2_time"
+                        android:visibility="gone"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/chart_label3"
@@ -111,17 +115,14 @@
                         android:layout_marginStart="30dp"/>
 
                     <com.db.chart.view.LineChartView
-                        xmlns:chart="http://schemas.android.com/apk/res-auto"
                         android:id="@+id/chart2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="-15dp"
-                        android:layout_marginBottom="35dp"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginRight="15dp"
-                        android:layout_below="@+id/chart2_time"
-                        chart:chart_axisColor="#30547d99"
-                        chart:chart_typeface="OpenSans-Regular.ttf"/>
+                        android:layout_marginTop="23dp"
+                        app:chart_axisColor="#30547d99"
+                        app:chart_typeface="OpenSans-Regular.ttf"
+                        android:layout_below="@+id/chart2_legend"
+                        android:layout_centerHorizontal="true" />
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
 
